@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo</title>
+    <link rel="stylesheet" href="ludo.css">
+</head>
+<body style="background-color: whitesmoke">
+    <div style="background-color: coral;display: flex;border: 2px solid black;margin: auto;width: 85%;padding:10px 50px;">
+        <div style="display: flex;flex-direction: column;">
+            <div class="playerBox" id="playerBox1">
+                <div style="text-align: center;font-weight: bold;font-size: 25px;" id="p1Name">Saad</div>
+                <button class="playBtn" id="playBtn1" onclick="play1Btn()">Play</button>
+                <div class="score" id="s1"></div>
+            </div>
+            <div style="display: flex;flex-direction: row;" id="redIdExit">
+            </div>
+        </div>
+        <div id="board">
+            <div id="green" class="homeBox">
+                <div class="holder-area">
+                    <div class="goti-holder" id="gh1">
+                    </div>
+                    <div class="goti-holder" id="gh2">
+                    </div>
+                    <div class="goti-holder" id="gh3">
+                    </div>
+                    <div class="goti-holder" id="gh4">
+                    </div>
+                </div>
+            </div>
+            <div id="blue" class="homeBox">
+                <div class="holder-area">
+                    <div class="goti-holder" id="bh1">
+                        <div class="goti bg" id="bg1"></div>
+                    </div>
+                    <div class="goti-holder" id="bh2">
+                        <div class="goti bg" id="bg2"></div>
+                    </div>
+                    <div class="goti-holder" id="bh3">
+                        <div class="goti bg" id="bg3"></div>
+                    </div>
+                    <div class="goti-holder" id="bh4">
+                        <div class="goti bg" id="bg4"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="red" class="homeBox">
+                <div class="holder-area">
+                    <div class="goti-holder" id="rh1">
+                        <div class="goti rg" id="rg1"></div>
+                    </div>
+                    <div class="goti-holder" id="rh2">
+                        <div class="goti rg" id="rg2"></div>
+                    </div>
+                    <div class="goti-holder" id="rh3">
+                        <div class="goti rg" id="rg3"></div>
+                    </div>
+                    <div class="goti-holder" id="rh4">
+                        <div class="goti rg" id="rg4"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="yellow" class="homeBox">
+                <div class="holder-area">
+                    <div class="goti-holder" id="yh1">
+                    </div>
+                    <div class="goti-holder" id="yh2">
+                    </div>
+                    <div class="goti-holder" id="yh3">
+                    </div>
+                    <div class="goti-holder" id="yh4">
+                    </div>
+                </div>
+            </div>
+            <div id="center">
+                <div style="position: relative;">
+                    <div class="triangle"></div>
+                </div>
+            </div>
+            <div id="green-runway">
+                <div style="position: relative;">
+                    <div class="box" id="g1"></div>
+                    <div class="box" id="g2"></div>
+                    <div class="box" id="g3"></div>
+                    <div class="box" id="g4"></div>
+                    <div class="box" id="g5"></div>
+                    <div class="box" id="g6"></div>
+                    <div class="box" id="g7"></div>
+                    <div class="box" id="g8"></div>
+                    <div class="box" id="g9"></div>
+                    <div class="box" id="g10"></div>
+                    <div class="box" id="g11"></div>
+                    <div class="box" id="g12"></div>
+                    <div class="box" id="g13"></div>
+                    <div class="box" id="g14"></div>
+                    <div class="box" id="g15">
+                    </div>
+                    <div class="box" id="g16"></div>
+                    <div class="box" id="g17"></div>
+                    <div class="box" id="g18"></div>
+                </div>
+            </div>
+            <div id="red-runway">
+                <div style="position: relative;">
+                    <div class="box" id="r1"></div>
+                    <div class="box" id="r2"></div>
+                    <div class="box" id="r3"></div>
+                    <div class="box" id="r4"></div>
+                    <div class="box" id="r5"></div>
+                    <div class="box" id="r6"></div>
+                    <div class="box" id="r7"></div>
+                    <div class="box" id="r8"></div>
+                    <div class="box" id="r9"></div>
+                    <div class="box" id="r10"></div>
+                    <div class="box" id="r11"></div>
+                    <div class="box" id="r12"></div>
+                    <div class="box" id="r13"></div>
+                    <div class="box" id="r14"></div>
+                    <div class="box" id="r15"></div>
+                    <div class="box" id="r16"></div>
+                    <div class="box" id="r17"></div>
+                    <div class="box" id="r18"></div>
+                </div>
+            </div>
+            <div id="yellow-runway">
+                <div style="position: relative;">
+                    <div class="box" id="y1"></div>
+                    <div class="box" id="y2"></div>
+                    <div class="box" id="y3"></div>
+                    <div class="box" id="y4"></div>
+                    <div class="box" id="y5"></div>
+                    <div class="box" id="y6"></div>
+                    <div class="box" id="y7"></div>
+                    <div class="box" id="y8"></div>
+                    <div class="box" id="y9"></div>
+                    <div class="box" id="y10"></div>
+                    <div class="box" id="y11"></div>
+                    <div class="box" id="y12"></div>
+                    <div class="box" id="y13"></div>
+                    <div class="box" id="y14"></div>
+                    <div class="box" id="y15"></div>
+                    <div class="box" id="y16"></div>
+                    <div class="box" id="y17"></div>
+                    <div class="box" id="y18"></div>
+                </div>
+            </div>
+            <div id="blue-runway">
+                <div style="position: relative;">
+                    <div class="box" id="b1"></div>
+                    <div class="box" id="b2"></div>
+                    <div class="box" id="b3"></div>
+                    <div class="box" id="b4"></div>
+                    <div class="box" id="b5"></div>
+                    <div class="box" id="b6"></div>
+                    <div class="box" id="b7"></div>
+                    <div class="box" id="b8"></div>
+                    <div class="box" id="b9"></div>
+                    <div class="box" id="b10"></div>
+                    <div class="box" id="b11"></div>
+                    <div class="box" id="b12"></div>
+                    <div class="box" id="b13"></div>
+                    <div class="box" id="b14"></div>
+                    <div class="box" id="b15"></div>
+                    <div class="box" id="b16"></div>
+                    <div class="box" id="b17"></div>
+                    <div class="box" id="b18"></div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex;flex-direction: column;">
+            <div class="playerBox" id="playerBox2">
+                <div style="text-align: center;font-weight: bold;font-size: 25px;" id="p2Name">Abdul Rafay</div>
+                <button class="playBtn" id="playBtn2" onclick="play2Btn()">Play</button>
+                <div class="score" id="s2"></div>
+            </div>
+            <div style="display: flex;flex-direction: row;" id="blueIdExit">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="ludo.js"></script>
+</html>
